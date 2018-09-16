@@ -10,8 +10,7 @@ print(car.wheels) // trying to unwrapp: print(car.name!) // error
 
 let optionalUserName: String? = "Carlos"
 
-if let userName = optionalUserName {  
-		// if you can create what is after if, then print userName
+if let userName = optionalUserName { // if you can create what is after if, then print userName
     print(userName)
 }
 else {print("theres no name")}
