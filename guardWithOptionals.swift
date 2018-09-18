@@ -20,7 +20,7 @@ changeOptionalStringToUpperCase()
 
 func changeOptionalStringToUpperCase() {
     
-	var name:String?
+	var name: String?
 
 	if let temp = name {
 		print("Uppercased:\(temp.uppercased())")
@@ -28,7 +28,7 @@ func changeOptionalStringToUpperCase() {
 		print("Name is nil. Cannot process")
 		return
     }
-	//how to access temp here?? Solution:Use Guard
+	//how to access temp here?? Solution:  Use Guard
 }
 
 changeOptionalStringToUpperCase()
@@ -36,5 +36,4 @@ changeOptionalStringToUpperCase()
 // Notice above two statements are both valid and does the same job. 
 // But using if-let statement you cannot use the unwrapped value outside of if-let statement. 
 // But with guard statement you can use the unwrapped value through out the function.
-
 
