@@ -5,7 +5,7 @@
 // On the contrary, force unwrapping says This variable does have a value while you use it. Therefore, when you force unwrap a variable that is nil, your program will throw an unexpectedly found nil while unwrapping an optional exception and crash. Some of the techniques for conditional unwrapping are explained below:
 
 var someValue: Int?
-var someAnotherValue: Int! = 0
+var someAnotherValue: Int? = 0
         
 if someValue != nil {
 	print("It has some value \(someValue!)")
