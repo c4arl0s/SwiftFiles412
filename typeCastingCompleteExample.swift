@@ -17,6 +17,15 @@ class Castle: House {
         super.init(windows: windows)
     }
 }
+//+------------------+------------------+--------------------+-------------------+--------------------------+
+//|                  |                  | HOUSE (superclass) |                   |                          |
+//+------------------+------------------+--------------------+-------------------+--------------------------+
+//| Upcasting:       |                  |                    |                   |                          |
+//| Villa is a Hoyse | Villa (subclass) |                    | Castle (subclass) | Downcasting:             |
+//|                  |                  |                    |                   | is this House a Castle=? |
+//|                  |                  |                    |                   |                          |
+//+------------------+------------------+--------------------+-------------------+--------------------------+
+
 // Back to type casting. 
 // With type casting you can treat an instance of a class as an instance of another superclass or subclass within its class hierarchy.
 // ---------------------------------------------------------------
@@ -26,6 +35,15 @@ class Castle: House {
 // We can’t cast an instance of type Castle to Villa, or vice-versa
 // ----------------------------------------------------------------
 // Let’s look at an example:
+//+------------------+------------------+--------------------+-------------------+--------------------------+
+//|                  |                  | HOUSE (superclass) |                   |                          |
+//+------------------+------------------+--------------------+-------------------+--------------------------+
+//| Upcasting:       |                  |                    |                   |                          |
+//| Villa is a Hoyse | Villa (subclass) |                    | Castle (subclass) | Downcasting:             |
+//|                  |                  |                    |                   | is this House a Castle=? |
+//|                  |                  |                    |                   |                          |
+//+------------------+------------------+--------------------+-------------------+--------------------------+
+
 
 // ==================================================
 let house: House = Castle(windows: 200, towers: 4)
@@ -68,6 +86,15 @@ print(type(of: oneHouse))   // Output: Castle
 
 // Type casting can get you out of that mess by letting you treat an instance of a class as an instance of another class, within its own class hierarchy.
 // Here’s how. First, let’s start again with that implicit cast:
+//+------------------+------------------+--------------------+-------------------+--------------------------+
+//|                  |                  | HOUSE (superclass) |                   |                          |
+//+------------------+------------------+--------------------+-------------------+--------------------------+
+//| Upcasting:       |                  |                    |                   |                          |
+//| Villa is a Hoyse | Villa (subclass) |                    | Castle (subclass) | Downcasting:             |
+//|                  |                  |                    |                   | is this House a Castle=? |
+//|                  |                  |                    |                   |                          |
+//+------------------+------------------+--------------------+-------------------+--------------------------+
+
 
 // =======================================================
 let anotherHouse: House = Castle(windows: 200, towers: 4)
@@ -91,6 +118,14 @@ print(castle.towers) // output: 4
 // but now we merely described it using a different type, so we can get to the property towers.
 
 // Here, I’ll prove to you that we’ve been using the same object all along:
+//+------------------+------------------+--------------------+-------------------+--------------------------+
+//|                  |                  | HOUSE (superclass) |                   |                          |
+//+------------------+------------------+--------------------+-------------------+--------------------------+
+//| Upcasting:       |                  |                    |                   |                          |
+//| Villa is a Hoyse | Villa (subclass) |                    | Castle (subclass) | Downcasting:             |
+//|                  |                  |                    |                   | is this House a Castle=? |
+//|                  |                  |                    |                   |                          |
+//+------------------+------------------+--------------------+-------------------+--------------------------+
 
 // =====================================
 print(house === castle) // output: true
@@ -202,13 +237,13 @@ print(castle.towers) // This works, Castle does have "towers"
 // Optional downcasting is exactly the same as force downcasting, except that the expression returns nil when the downcast fails.
 // Here’s an example:
 
-// =====================================================
+// ==============================================================================================
 let thirdHouse: House = Castle(windows: 200, towers: 4)
 print(thirdHouse.windows) 				// Output: 200
 
 let thirdVilla: Villa? = house as? Villa
 print(thirdVilla?.hasGarage) 			// Output: nil
-// =====================================================
+// ==============================================================================================
 
 // Here’s what happens:
 // * First, we define a constant named thirdHouse of type House and assign an instance of Castle to it.
@@ -220,7 +255,7 @@ print(thirdVilla?.hasGarage) 			// Output: nil
 
 // Let’s look an example that’s more practical.
 
-// =======================================
+// ==============================================================================================
 var houses = [
     Castle(windows: 100, towers: 3),
     Villa(windows: 20, hasGarage: false),
@@ -229,7 +264,7 @@ var houses = [
     Castle(windows: 93, towers: 8),
     Villa(windows: 42, hasGarage: true)
 ]
-// ======================================
+// ==============================================================================================
 
 // In the above example you’re creating an array with instances of Castle, House and Villa. 
 // Thanks to polymorphism, the type of houses is inferred as [House].
