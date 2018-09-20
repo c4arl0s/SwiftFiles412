@@ -34,8 +34,10 @@ let library = [
 // Checking Type
 var movieCount = 0
 var songCount = 0
+
 // Use the type check operator (is) to check whether an instance is of a certain subclass type.
 // Counting How many objects are type Movie and how many objects are type Song
+
 for item in library {
     if item is Movie { movieCount += 1 }
     else if item is Song { songCount += 1 }
