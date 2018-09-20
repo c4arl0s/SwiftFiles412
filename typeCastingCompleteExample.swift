@@ -1,17 +1,17 @@
 class House {
-    var windows:Int = 0
-    init(windows:Int) { self.windows = windows }
+    var windows: Int = 0
+    init(windows: Int) { self.windows = windows }
 }
 class Villa: House {
     var hasGarage: Bool = false
-    init(windows:Int, hasGarage:Bool) {
+    init(windows: Int, hasGarage:Bool) {
         self.hasGarage = hasGarage
         super.init(windows: windows)
     }
 }
 class Castle: House {
-    var towers:Int = 0
-    init(windows:Int, towers:Int)
+    var towers: Int = 0
+    init(windows: Int, towers:Int)
     {
         self.towers = towers
         super.init(windows: windows)
@@ -36,7 +36,6 @@ let house: House = Castle(windows: 200, towers: 4)
 // Because House and Castle are in the same class hierarchy, 
 // you can assign an instance of Castle to a variable of type House. 
 // As explained earlier, it’s like saying: a castle is a house.
-
 // The upcast is implicit, so you don’t explicitly code it. You could though, like this:
 
 // ============================================================
@@ -47,7 +46,7 @@ let oneHouse: House = Castle(windows: 200, towers: 4) as House
 // is the type of house and it’s actual value. Let’s check the dynamic type of house, like this:
 
 // =============================================
-print(type(of: oneHouse))   // Outputs: Castle
+print(type(of: oneHouse))   // Output: Castle
 // =============================================
 
 // You can use the type(of:) function to get the type of a value. And it prints out Castle! Wait a minute…
@@ -104,11 +103,11 @@ print(house === castle) // output: true
 // Can we cast between unrelated types? No, you can only downcast or upcast. 
 // You can’t cast from Castle to Villa, like this:
 
-// ================================================
+// ===========================================================
 let oneVilla = Villa(windows: 15, hasGarage: true)
 let oneCastle = Castle(windows: 150, towers: 8)
 // let result = OneVilla as! oneCastle // cast from ‘Villa’ to unrelated type ‘Castle’ always fails.
-// ==========================================================
+// ===========================================================
 
 // Pfew! Let’s quickly summarize…
 // * With type casting you can treat an instance of a class as an instance of another superclass or subclass within its class hierarchy.
@@ -119,10 +118,10 @@ let oneCastle = Castle(windows: 150, towers: 8)
 // HOW TO USE “as”, “is”, “as!” AND “as?”
 
 // You can use 4 different syntaxes for casting in Swift:
-// as for upcasting
-// is for type checking
-// as! for force downcasting
-// as? for optional downcasting
+// * as for upcasting
+// * is for type checking
+// * as! for force downcasting
+// * as? for optional downcasting
 
 //UPCASTING WITH “as”
 
@@ -148,12 +147,12 @@ if tintagel is Castle {
 // The is operator returns true for any implicit upcast in the class hierarchy. 
 // When you use is to check for a superclass type, it also returns true. Like this:
 
-// ==============================================
+// =====================================================
 let firstHouse: House = Castle(windows: 123, towers: 3)
 print(firstHouse is House)   // Output: true
 print(firstHouse is Castle)  // Output: true
 print(firstHouse is Villa)   // Output: false
-// ==============================================
+// =====================================================
 
 // In the example above, you see that:
 // firstHouse is a House (superclass)
@@ -191,7 +190,8 @@ let secondCastle: Castle = house as! Castle
 print(castle.towers) // This works, Castle does have "towers"
 // ============================================================================
 
-// In the above code we’re creating an instance of class Castle and assign it to a variable house of type House. Even though the instance is of type Castle, we can’t access the property towers because the type of house is House.
+// In the above code we’re creating an instance of class Castle and assign it to a variable house of type House. 
+// Even though the instance is of type Castle, we can’t access the property towers because the type of house is House.
 // In the second part, we’re force downcasting house to type Castle with the as! keyword. This results in a non-optional value of type Castle that’s assigned to the constant castle, and subsequently we print out the value of the towers property.
 
 // Again, it’s not the value that changes! We’re working with an instance of Castle throughout the code. What changes is the type we use to describe or treat that value.
@@ -202,13 +202,13 @@ print(castle.towers) // This works, Castle does have "towers"
 // Optional downcasting is exactly the same as force downcasting, except that the expression returns nil when the downcast fails.
 // Here’s an example:
 
-// ===============================================
+// =====================================================
 let thirdHouse: House = Castle(windows: 200, towers: 4)
 print(thirdHouse.windows) 				// Output: 200
 
 let thirdVilla: Villa? = house as? Villa
 print(thirdVilla?.hasGarage) 			// Output: nil
-// ===============================================
+// =====================================================
 
 // Here’s what happens:
 // * First, we define a constant named thirdHouse of type House and assign an instance of Castle to it.
