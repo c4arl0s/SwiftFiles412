@@ -1,4 +1,5 @@
 // Guard statements can also chain multiple conditions separated by comma (,) as:
+#!/usr/bin/swift
 
 func changeOptionalStringToUpperCase() {
 

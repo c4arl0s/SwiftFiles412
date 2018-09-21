@@ -1,3 +1,4 @@
+#!/usr/bin/swift
 class House {
     var windows: Int = 0
     init(windows: Int) { self.windows = windows }
