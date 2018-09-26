@@ -7,7 +7,6 @@ struct Point {
 struct Size {
     var width = 0.0, height = 0.0
 }
-jds
 struct Rect {
     var origin = Point()
     var size = Size()

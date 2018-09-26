@@ -20,3 +20,4 @@ print("list of names, using closure with shorthand argument = \(reversedNames)")
 
 reversedNames = names.sorted(by: >)
 print("list of names, using Operator Methods: \(reversedNames)")
+
