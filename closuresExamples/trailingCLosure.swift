@@ -1,3 +1,5 @@
+#!/usr/bin/swift
+
 func someSimpleFunction(message: String, someClosure: ()->()) {	// this function accept 2 arguments, a string and a closure
 		print(message)
     someClosure()
