@@ -1,0 +1,17 @@
+What are optionals for?
+
+Optionals have two use cases:
+
+Things that can fail (I was expecting something but I got nothing)
+Things that are nothing now but might be something later (and vice-versa)
+Some concrete examples:
+
+- A property which can be there or not there, like middleName or spouse in a Person class
+- A method which can return a value or nothing, like searching for a match in an array
+- A method which can return either a result or get an error and return nothing, like trying to read a file's contents (which normally returns the file's data) but the file doesn't exist
+- Delegate properties, which don't always have to be set and are generally set after initialization
+- For weak properties in classes. The thing they point to can be set to nil at any time
+- A large resource that might have to be released to reclaim memory
+- When you need a way to know when a value has been set (data not yet loaded > the data) instead of using a separate dataLoaded Boolean
+
+- Optionals don't exist in Objective-C but there is an equivalent concept, returning nil.

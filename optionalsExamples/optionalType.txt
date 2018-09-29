@@ -1,0 +1,10 @@
+You use the Optional type whenever you use optional values, even if you never type the word Optional. 
+Swift’s type system usually shows the wrapped type’s name with a trailing question mark (?) instead of showing the full type name. 
+For example, if a variable has the type Int?, that’s just another way of writing Optional<Int>. 
+The shortened form is preferred for ease of reading and writing code.
+
+The types of shortForm and longForm in the following code sample are the same:
+
+let shortForm: Int? = Int("42")
+let longForm: Optional<Int> = Int("42")
+

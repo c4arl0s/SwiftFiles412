@@ -1,0 +1,21 @@
+Optionals are a powerful feature in Swift language which come to solve the problem of non-existing values. 
+
+Optional is just a type in Swift language, nothing fancy. Int and Int? (optional Int) are two different types, if your variable happens to be of type Int you can be absolutely sure it will always have an integer value, and if your variable is of type Int? it will either have an integer value or it will have no value at all (in other words, it will be nil).
+
+The high level idea of wrapping the value inside a box is that we can safely use the box without worrying what’s inside. There’s a powerful functional programming concept behind Swift optionals - the monads. I highly recommend to delve deeper and study monads so you can have a bigger picture of what is this all about. At the end I’ll provide some good sources to start with.
+
+Under the hood optional types are merely an enum with two cases — None meaning no value is set and Some meaning the value is set and it’s the value associated with it.
+
+	enum Optional<T> {
+    case None
+    case Some(T)
+}
+
+// these two statements are exactly the same
+let x: String? = nil
+let x = Optional<String>.None
+
+// these two statements are exactly the same
+let y: String? = "Hi there"
+let y = Optional<String>.Some("Hi there")
+

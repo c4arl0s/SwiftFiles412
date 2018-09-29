@@ -1,0 +1,34 @@
+So far we’ve only looked at examples of type casting. What does type casting look like in an actual iOS app?
+
+I ran a few searches for type casting through the codebase of an app I built recently, and I found no less than 167 cases of as?. Here’s what I used type casting for:
+
+
+* Responding to different types of view controllers within a tab bar controller, e.g. to take action on a view controller with a specific type
+* Downcasting between object models, e.g. when you get a PFObject that you want to cast to PFUser
+* A lot of casting from Any to a specific type, e.g. when receiving objects via JSON
+* Occasionally using toll-free bridging between Swift types and Objective-C types, to use String as NSString for example
+* Downcasting subclassed views, in a table view controller with a custom table view cell subclass for example.
+
+Type casting is a frequent occurence in practical iOS development. Let’s look at an example.
+
+When you want to use a custom table view cell in a table view controller, you subclass UITableViewCell. As a result you inherit the properties of the table view cell, and gain the ability to customize them or use your own custom UI with a XIB.
+
+Then, when you want to provide your cell to the table view, you implement the following function:
+
+override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath)
+    // Customize cell contents here...
+    return cell
+}
+
+See how that function returns an instance of UITableViewCell? In fact, the type of cell is UITableViewCell. You’ve defined a property on your custom subclass, so how are you going to access that now?
+
+With type casting! Like this:
+
+let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as? MyCustomTableViewCell
+
+You’ve subclassed UITableViewCell, so the downcast is possible, because both your subclass and UITableViewCell are part of the same class hierarchy.
+
+The downcast succeeds as long as dequeueReusableCell(...) returns an instance of your subclass. You’ll need to take in account that the downcast can fail, so you use as? to gracefully handle the error when that happens.
+
+Awesome!

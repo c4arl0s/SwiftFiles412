@@ -1,0 +1,12 @@
+Type casting in swift : difference between is, as, as?, as!
+What is the difference between is, as, as?, as! in swift? Well, lets check.
+
+Apple doc says: 
+
+Type casting is a way to check the type of an instance, or to treat that instance as a different superclass or subclass from somewhere else in its own class hierarchy.
+
+Type casting in Swift is implemented with the is and as operators. 
+
+is is used to check the type of a value 
+whereas as is used to cast a value to a different type.
+

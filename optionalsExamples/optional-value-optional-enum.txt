@@ -1,0 +1,2 @@
+Optionals type, which handles the absence of a value. Optionals say either "there is a value, and it equals x" or "there isn't a value at all".
+An Optional is a type on its own, actually one of Swift’s new super-powered enums. It has two possible values, None and Some(T), where T is an associated value of the correct data type available in Swift.

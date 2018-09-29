@@ -1,0 +1,12 @@
+An optional in Swift is a type that can hold either a value or no value. Optionals are written by appending a ? to any type:
+
+var name: String? = "Bertie"
+
+Optionals (along with Generics) are one of the most difficult Swift concepts to understand. Because of how they are written and used, it's easy to get a wrong idea of what they are. Compare the optional above to creating a normal String:
+
+var name: String = "Bertie" // No "?" after String
+
+From the syntax it looks like an optional String is very similar to an ordinary String. It's not. An optional String is not a String with some "optional" setting turned on. It's not a special variety of String. A String and an optional String are completely different types.
+
+Here's the most important thing to know: An optional is a kind of container. An optional String is a container which might contain a String. An optional Int is a container which might contain an Int. Think of an optional as a kind of parcel. Before you open it (or "unwrap" in the language of optionals) you won't know if it contains something or nothing.
+
