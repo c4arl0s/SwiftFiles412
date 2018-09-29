@@ -1,1 +1,0 @@
-this a crazy experiment accordin to the manual of git. I would do what the manual is asking with the commands.
