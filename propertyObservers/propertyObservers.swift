@@ -5,7 +5,8 @@ var myProperty = 5 {
     }
     didSet {
         print("Did set to \(myProperty). It was previously \(oldValue)")
-} }
+		} 
+}
 
 myProperty = 6
 

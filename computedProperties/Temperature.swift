@@ -7,7 +7,12 @@ struct Temperature {
 		}
 	var kelvin: Double {
 			return celsius + 273.15
-			}
+		}
 }
+
+let instanceOfTemperature = Temperature(celsius: 20.0)
+print(instanceOfTemperature.fahrenheit)
+print(instanceOfTemperature.kelvin)
+
 
 
