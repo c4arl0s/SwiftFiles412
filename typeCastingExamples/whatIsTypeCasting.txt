@@ -1,0 +1,1 @@
+With type casting you treat an object as one of another type. The underlying object doesn’t change, merely the type you use to describe that object.
