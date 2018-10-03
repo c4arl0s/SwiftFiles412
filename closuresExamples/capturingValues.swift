@@ -14,3 +14,4 @@ func makeIncrementer(forIncrement amount: Int) -> () -> Int {		// makeIncremente
 let incrementByTen = makeIncrementer(forIncrement: 10)
 incrementByTen()
 
+// the return type of makeIncrementer is () -> Int.   It returns a function
