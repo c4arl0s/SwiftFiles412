@@ -5,8 +5,7 @@ It also contains a set of statements which executes after you call it and can be
 
 Closures are mainly used for two reasons:
 
-- Completion blocks
-	Closures help you to be notified when some task has finished its execution. See Closure as a completion handler to learn more about it.
+- Completion blocks: Closures help you to be notified when some task has finished its execution. See Closure as a completion handler to learn more about it.
 
 	Higher order functions
 - Closures can be passed as an input parameters for higher order functions. 
