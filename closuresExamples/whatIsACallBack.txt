@@ -3,4 +3,5 @@ This execution may be immediate as in a synchronous callback, or it might happen
 
 Design: There are two types of callbacks: differing in how they control data flow at runtime:
 - blocking callbacks (also known as synchronous callbacks or just callbacks)
-- deferred callbacks (also known as asynchronous callbacks).  
+- deferred callbacks (also known as asynchronous callbacks).
+  

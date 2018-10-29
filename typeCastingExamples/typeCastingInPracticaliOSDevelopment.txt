@@ -1,6 +1,7 @@
 So far we’ve only looked at examples of type casting. What does type casting look like in an actual iOS app?
 
-I ran a few searches for type casting through the codebase of an app I built recently, and I found no less than 167 cases of as?. Here’s what I used type casting for:
+I ran a few searches for type casting through the codebase of an app I built recently, and I found no less than 167 cases of as?. 
+Here’s what I used type casting for:
 
 
 * Responding to different types of view controllers within a tab bar controller, e.g. to take action on a view controller with a specific type

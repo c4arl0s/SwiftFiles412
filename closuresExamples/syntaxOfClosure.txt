@@ -6,7 +6,12 @@ Closure expression syntax has the following general form:
    statements
 }
 
-- Notice the use of in keyword after the return type. 
-- The in keyword is used to separate the return Type and statements inside the closure. 
-- The closure accepts parameters and can return value. 
-- Lets learn to create your own closures with below examples:
+// Notice the use of in keyword after the return type. 
+// The in keyword is used to separate the return Type and statements inside the closure. 
+// The closure accepts parameters and can return value. 
+// Lets learn to create your own closures with below examples:
+
+// Inferring parameter and return value types from context
+// Implicit returns from single-expression closures
+// Shorthand argument names
+// Trailing closure syntax

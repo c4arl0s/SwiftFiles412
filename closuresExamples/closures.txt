@@ -12,3 +12,5 @@ Closures are mainly used for two reasons:
 - A higher order function is just a type of function that accepts function as an input and returns value of type function as output.
 	
 For this purpose it's better to use closures in replacement of function because closure omits the func keyword and function name that makes the code more readable and short.
+
+At first glance, a closure is simply a function defined within another function. However, the power of closures is derived from the fact that the inner function remembers the environment in which it was created. In other words, the inner function has access to the outer function's variables and parameters.

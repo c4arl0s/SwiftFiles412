@@ -1,3 +1,0 @@
-* Downcasting is the (fundamentally unsafe) act of casting an object as one of its subclasses in an attempt to invoke methods or 
-read members that only exist on that subclass. 
-In Swift, one can downcast something of type AnyObject to any other type with an as cast.
