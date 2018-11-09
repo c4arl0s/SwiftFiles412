@@ -1,1 +1,5 @@
-Scope refers to the visibility of variables. In other words, which parts of your program can see or use it. Normally, every variable has a global scope. Once defined, every part of your program can access a variable. It is very useful to be able to limit a variable's scope to a single function.
+Scope refers to the visibility of variables. 
+In other words, which parts of your program can see or use it. 
+Normally, every variable has a global scope. 
+Once defined, every part of your program can access a variable. 
+It is very useful to be able to limit a variable's scope to a single function.
