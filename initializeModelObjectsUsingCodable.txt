@@ -1,0 +1,31 @@
+what have you done ?
+- performe the request
+- decoding JSON data into native swift types you have a dictionary [String:String]
+- now you have to convert the dictionary into a PhotoInfo object that you can use thoughout your project.
+
+Codable protocol defines a set of rules that can be applied to a clas or structure that allow you to easily convert data from one to another.
+
+in this case JSONDecoder class can be used to translate information from JSON into your custom model objects.
+
+- encoders and decoders work with Codable types
+- init(with:) which is used to initialize the new type of data from the old data
+- decode(to:) which is used to convert the current type to a new type of data.
+- by default, the Codable protocol matches property names and values with the keys and values of the encoded type. HOwever, in this case you have keys in your JSON data that differ from the names of your properties, which will require you to implement custome keys.
+- to map non-matching keys to your properties you need to declare a nested enumeration named CodingKeys that conforms to the CodingKey protocol inside your object. 
+
+Example: 
+
+struct Report: Codable {
+	let creationDate: Date
+	let profileID: String
+	let readCount: Int
+
+	enum CodingKeys: String, CodingKey {
+		case creationDate = "report_date"
+		case profileID = "profile_id"
+		case readCount = "read_count"
+	}
+}
+
+the JSON data also contains key/value pairs for date, service version, and media type that PhotoInfo does not use. By Default, encoders and decoders that work with Codable objects require that each key or property have a counterpart. To override this, you will need to create your won implementation of the init(from:) method.
+
